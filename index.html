@@ -74,7 +74,7 @@
                             <div class="contact">
                                 <ul v-if="contacts.length">
                                     <li v-for="contact in contacts"
-                                        v-on:click="thisChat(index)">
+                                        v-on:click="thisChat(contact)">
                                         <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="">
                                         <span>{{ contact.name }}</span>
                                     </li>

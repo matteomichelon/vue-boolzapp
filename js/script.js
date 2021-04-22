@@ -97,9 +97,16 @@ var app = new Vue(
 
         /* METHODS */
         methods: {
-            thisChat ( index ) {
+            thisChat ( contact ) {
+                console.log( this.contacts[ 0 ] );
+                /* Test */
+                console.log( 'contact:', contact, 'name:', contact.name, 'message.text:', contact.messages );
+                const arrayMessage = contact.messages;
 
-                alert( "test" );
+                contact.forEach( ( element ) => {
+                    console.log( element.text );
+                } );
+                /* End Test */
 
             }
         }
