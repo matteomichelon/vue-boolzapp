@@ -41,6 +41,10 @@ li {
     margin: auto;
 }
 
+.display-flex {
+    display: flex;
+}
+
 /* HEADER */
 
 header {
@@ -48,15 +52,34 @@ header {
     overflow: hidden;
 }
 
+/* Header-left */
+
 .header-left {
     float: left;
     height: 100%;
     /* Width stesso di nav */
     width: 350px;
     overflow: hidden;
+    padding: 10px;
+    /* display-flex */
+    align-items: center;
     /* test */
     border: 1px solid black;
 }
+
+
+
+header .user-profile img {
+    width: 15%;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+header .user-profile span {
+    vertical-align: middle;
+}
+
+/* Header-right */
 
 .header-right {
     float: left;
