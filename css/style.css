@@ -33,6 +33,11 @@ li {
     height: 100vh;
     width: 100%;
     padding: 20px 0;
+    background-image: linear-gradient(to bottom,
+    #009688 0px,
+    #009688 15vh,
+    #dddbd1 15vh,
+    #d2dbdc 100%);
 }
 
 .container {
@@ -80,13 +85,11 @@ main {
 
 .container-left {
     width: 30%;
-    /* test */
-    border: 1px solid black;
 }
 
 /* Servin Container */
 
-.servin-container{
+.servin-container {
     align-items: center;
     padding: 10px;
     background-color: #82d6fb;
@@ -99,29 +102,44 @@ main {
     font-size: 20px;
 }
 
-.bell-slash i{
+.bell-slash i {
     color: #82d6fb;
 }
 
-.servin-text{
+.servin-text {
     padding-left: 10px;
 }
 
 /* Finder */
 
-.finder-container{
+.finder-container {
     background-color: #f9f9f9;
     padding: 5px;
 }
 
-.finder{
+.finder {
     background-color: white;
+}
+
+/* Contacts */
+
+.contact-container {
+    padding: 10px;
+    border-bottom: 3px solid #f9f9f9;
+}
+
+.contact img {
+    width: 15%;
+    border-radius: 50%;
+}
+
+.contact span {
+    vertical-align: top;
+    padding-left: 10px;
 }
 
 /* Container-right */
 
 .container-right {
     width: 70%;
-    /* test */
-    border: 1px solid black;
 }
