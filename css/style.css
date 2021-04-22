@@ -86,6 +86,7 @@ main {
 .container-left {
     width: 30%;
     background-color: #fefefe;
+    overflow: hidden;
 }
 
 /* Servin Container */
@@ -126,7 +127,12 @@ main {
 
 .contact-container {
     padding: 10px;
+    overflow-y: auto;
+}
+
+.contact{
     border-bottom: 3px solid #f9f9f9;
+    padding: 10px 0;
 }
 
 .contact img {
