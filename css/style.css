@@ -85,6 +85,7 @@ main {
 
 .container-left {
     width: 30%;
+    background-color: #fefefe;
 }
 
 /* Servin Container */
@@ -142,4 +143,5 @@ main {
 
 .container-right {
     width: 70%;
+    background-image: url(../img/mine.jpg);
 }
