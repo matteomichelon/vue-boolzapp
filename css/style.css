@@ -167,7 +167,7 @@ main {
 .message-received {
     float: left;
     background-color: white;
-    /* position: relative; */
+    margin-bottom: 15px;
 }
 
 .message-received span,.message-sent span {
@@ -181,4 +181,5 @@ main {
 .message-sent {
     float: right;
     background-color: #d0f8b2;
+    margin-bottom: 15px;
 }

@@ -111,29 +111,32 @@
                             v-for="contact in contacts"
                             v-if="contact.visible == true">
 
-                            <div class="clearfix">
-                                <div class="message-received message-padding"
-                                    v-for="message in contact.messages"
-                                    v-if="message.status == 'received'">
+                            <!-- Messsage Container -->
+                            <div class="message-container"
+                                v-for="message in contact.messages">
 
-                                    {{message.text}}
-
-                                    <span>{{message.date}}</span>
-
+                                <!-- Mex Received -->
+                                <div class="clearfix">
+                                    <div class="message-received message-padding"
+                                        v-if="message.status == 'received'">
+                                        {{message.text}}
+                                        <span>{{message.date}}</span>
+                                    </div>
                                 </div>
-                            </div>
+                                <!-- end Mex Received -->
 
-                            <div class="clearfix">
-                                <div class="message-sent message-padding"
-                                    v-for="message in contact.messages"
-                                    v-if="message.status == 'sent'">
-
-                                    {{message.text}}
-
-                                    <span>{{message.date}}</span>
-
+                                <!-- Mex Send -->
+                                <div class="clearfix">
+                                    <div class="message-sent message-padding"
+                                        v-if="message.status == 'sent'">
+                                        {{message.text}}
+                                        <span>{{message.date}}</span>
+                                    </div>
                                 </div>
+                                <!-- end Mex Send -->
+
                             </div>
+                            <!-- end Messsage Container -->
 
 
                         </div>
