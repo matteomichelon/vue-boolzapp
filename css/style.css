@@ -1,0 +1,121 @@
+/*  
+    @media screen and (max-width: 768px) {}
+    @media screen and (min-width:769px) and (max-width:991px) {}
+    @media screen and (min-width: 992px) {}
+*/
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* COMMON */
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+.wrapper {
+    height: 100vh;
+    width: 100%;
+    padding: 20px 0;
+    /* TEST */
+    background-color: beige;
+}
+
+.container {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    /* TEST */
+    background-color: burlywood;
+}
+
+/* HEADER */
+
+header {
+    height: 80px;
+    overflow: hidden;
+}
+
+.header-left {
+    float: left;
+    height: 100%;
+    /* Width stesso di nav */
+    width: 350px;
+    overflow: hidden;
+    /* test */
+    background-color: blueviolet;
+}
+
+.header-right {
+    float: left;
+    height: 100%;
+    /* Width stesso di main-right */
+    width: calc( 100% - 350px);
+    overflow: hidden;
+    /* test */
+    background-color: brown;
+}
+
+/* NAV */
+
+nav {
+    float: left;
+    width: 350px;
+    height: 100%;
+    overflow-y: auto;
+    /* test */
+    background-color: teal;
+}
+
+/* MAIN */
+
+main {
+    height: calc( 100% - 80px);
+    width: 100%;
+    /* test */
+    background-color: brown;
+}
+
+.main-right {
+    float: left;
+    width: calc( 100% - 350px);
+    height: 100%;
+    overflow-y: auto;
+    /* test */
+    background-color: white;
+    color: black;
+}
+
+.chat-container{
+    width: 100%;
+    height: calc(100% - 100px);
+    overflow-y: auto;
+
+    /* test */
+    background-color: greenyellow;
+
+
+}
+
+.write-input-container {
+    width: 100%;
+    height: 100px;
+    /* test */
+    background-color: aqua;
+}
