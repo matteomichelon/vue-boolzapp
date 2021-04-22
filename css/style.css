@@ -45,88 +45,83 @@ li {
     display: flex;
 }
 
-/* HEADER */
+/* User container */
 
-header {
-    height: 80px;
-    overflow: hidden;
-}
-
-/* Header-left */
-
-.header-left {
-    float: left;
-    height: 100%;
-    /* Width stesso di nav */
-    width: 350px;
-    overflow: hidden;
-    padding: 10px;
-    /* display-flex */
+.user-container {
     align-items: center;
-    /* test */
-    border: 1px solid black;
+    background-color: #e7e7e7;
+    height: 75px;
+    justify-content: space-between;
 }
 
-
-
-header .user-profile img {
+.img-profile img {
     width: 15%;
+    padding: 10px;
     border-radius: 50%;
     vertical-align: middle;
 }
 
-header .user-profile span {
+.img-profile span {
     vertical-align: middle;
 }
 
-/* Header-right */
-
-.header-right {
-    float: left;
-    height: 100%;
-    /* Width stesso di main-right */
-    width: calc( 100% - 350px);
-    overflow: hidden;
-    /* test */
-    border: 1px solid black;
+.user-icons {
+    padding-right: 15px;
 }
 
 /* MAIN */
 
 main {
-    height: calc( 100% - 80px);
+    height: calc( 100% - 10px);
     width: 100%;
 }
 
-nav {
-    float: left;
-    width: 350px;
-    height: 100%;
-    overflow-y: auto;
+/* Container-left */
+
+.container-left {
+    width: 30%;
     /* test */
     border: 1px solid black;
 }
 
-.main-right {
-    float: left;
-    width: calc( 100% - 350px);
-    height: 100%;
-    overflow-y: auto;
-    /* test */
-    border: 1px solid black;
+/* Servin Container */
+
+.servin-container{
+    align-items: center;
+    padding: 10px;
+    background-color: #82d6fb;
 }
 
-.chat-container {
-    width: 100%;
-    height: calc(100% - 80px);
-    overflow-y: auto;
-    /* test */
-    border: 1px solid black;
+.bell-slash {
+    padding: 10px;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 20px;
 }
 
-.write-container {
-    width: 100%;
-    height: 80px;
+.bell-slash i{
+    color: #82d6fb;
+}
+
+.servin-text{
+    padding-left: 10px;
+}
+
+/* Finder */
+
+.finder-container{
+    background-color: #f9f9f9;
+    padding: 5px;
+}
+
+.finder{
+    background-color: white;
+}
+
+/* Container-right */
+
+.container-right {
+    width: 70%;
     /* test */
     border: 1px solid black;
 }
