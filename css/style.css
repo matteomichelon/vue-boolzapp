@@ -26,7 +26,6 @@ a {
 
 li {
     list-style-type: none;
-    display: inline-block;
 }
 
 .wrapper {
@@ -125,22 +124,17 @@ main {
 
 /* Contacts */
 
-.contact-container {
-    padding: 10px;
-    overflow-y: auto;
-}
-
-.contact{
+.contact li{
     border-bottom: 3px solid #f9f9f9;
-    padding: 10px 0;
+    padding: 10px;
 }
 
-.contact img {
+.contact li img {
     width: 15%;
     border-radius: 50%;
 }
 
-.contact span {
+.contact li span {
     vertical-align: top;
     padding-left: 10px;
 }

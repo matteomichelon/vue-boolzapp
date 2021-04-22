@@ -46,7 +46,7 @@
                         </div>
                         <!-- end User-container -->
 
-                        <!-- Servin Containe  -->
+                        <!-- Servin Container  -->
                         <div class="servin-container display-flex">
                             <div class="bell-slash">
                                 <i class="fas fa-bell-slash"></i>
@@ -55,7 +55,7 @@
                                 testo
                             </div>
                         </div>
-                        <!-- end Servin Containe  -->
+                        <!-- end Servin Container  -->
 
                         <!-- Finder -->
                         <div class="finder-container">
@@ -72,8 +72,12 @@
 
                             <!-- Contact -->
                             <div class="contact">
-                                <img src="img/avatar_1.jpg" alt="">
-                                <span>Michele</span>
+                                <ul v-if="contacts.length">
+                                    <li v-for="contact in contacts">
+                                        <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="">
+                                        <span>{{ contact.name }}</span>
+                                    </li>
+                                </ul>
                             </div>
                             <!-- end Contact -->
 
