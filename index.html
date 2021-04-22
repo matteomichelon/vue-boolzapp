@@ -94,7 +94,7 @@
 
                         <!-- Contact Active -->
                         <div class="user-container display-flex"
-                            v-for="(contact) in contacts"
+                            v-for="contact in contacts"
                             v-if="contact.visible == true">
 
                             <div class="img-profile">
@@ -107,19 +107,31 @@
                         <!-- end Contact Active -->
 
                         <!-- Messages -->
-                        <div class="messages">
+                        <div class="messages"
+                            v-for="contact in contacts"
+                            v-if="contact.visible == true">
 
                             <div class="clearfix">
-                                <div class="message-received message-padding">
+                                <div class="message-received message-padding"
+                                    v-for="message in contact.messages"
+                                    v-if="message.status == 'received'">
 
-                                    <span></span>
+                                    {{message.text}}
+
+                                    <span>{{message.date}}</span>
+
                                 </div>
                             </div>
 
                             <div class="clearfix">
-                                <div class="message-sent message-padding">
+                                <div class="message-sent message-padding"
+                                    v-for="message in contact.messages"
+                                    v-if="message.status == 'sent'">
 
-                                    <span></span>
+                                    {{message.text}}
+
+                                    <span>{{message.date}}</span>
+
                                 </div>
                             </div>
 

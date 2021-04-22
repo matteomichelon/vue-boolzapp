@@ -111,17 +111,9 @@ var app = new Vue(
                 const object = this.contacts[ index ];
                 object.visible = !object.visible;
 
+            },
 
-
-
-                /* Test */
-                /*  console.log( 'contact:', contact, 'name:', contact.name, 'message.text:', contact.messages );
-                 const arrayMessage = contact.messages;
- 
-                 arrayMessage.forEach( ( element ) => {
-                     console.log( element.text );
-                 } ); */
-                /* End Test */
+            function () {
 
             }
         }
@@ -130,4 +122,12 @@ var app = new Vue(
 
 /* end Vue */
 
+/* Test */
+/*  console.log( 'contact:', contact, 'name:', contact.name, 'message.text:', contact.messages );
+ const arrayMessage = contact.messages;
+
+ arrayMessage.forEach( ( element ) => {
+     console.log( element.text );
+ } ); */
+/* End Test */
 
