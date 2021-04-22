@@ -103,7 +103,7 @@ var app = new Vue(
                 console.log( 'contact:', contact, 'name:', contact.name, 'message.text:', contact.messages );
                 const arrayMessage = contact.messages;
 
-                contact.forEach( ( element ) => {
+                arrayMessage.forEach( ( element ) => {
                     console.log( element.text );
                 } );
                 /* End Test */
