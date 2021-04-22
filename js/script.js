@@ -33,7 +33,7 @@ var app = new Vue(
                 {
                     name: 'Fabio',
                     avatar: '_2',
-                    visible: true,
+                    visible: false,
                     messages: [
                         {
                             date: '20/03/2020 16:30:00',
@@ -55,7 +55,7 @@ var app = new Vue(
                 {
                     name: 'Samuele',
                     avatar: '_3',
-                    visible: true,
+                    visible: false,
                     messages: [
                         {
                             date: '28/03/2020 10:10:40',
@@ -77,7 +77,7 @@ var app = new Vue(
                 {
                     name: 'Luisa',
                     avatar: '_4',
-                    visible: true,
+                    visible: false,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -97,15 +97,30 @@ var app = new Vue(
 
         /* METHODS */
         methods: {
-            thisChat ( contact ) {
-                console.log( this.contacts[ 0 ] );
-                /* Test */
-                console.log( 'contact:', contact, 'name:', contact.name, 'message.text:', contact.messages );
-                const arrayMessage = contact.messages;
 
-                arrayMessage.forEach( ( element ) => {
-                    console.log( element.text );
+            // Rende visible:true oggetto selezionato
+            thisChat ( index ) {
+
+                // rendo visible:false tutti gli oggetti
+                this.contacts.forEach( ( element ) => {
+                    element.visible = false;
+                    console.log( element.visible );
                 } );
+
+                // Aggiorno a visible:true elemento selezionato
+                const object = this.contacts[ index ];
+                object.visible = !object.visible;
+
+
+
+
+                /* Test */
+                /*  console.log( 'contact:', contact, 'name:', contact.name, 'message.text:', contact.messages );
+                 const arrayMessage = contact.messages;
+ 
+                 arrayMessage.forEach( ( element ) => {
+                     console.log( element.text );
+                 } ); */
                 /* End Test */
 
             }

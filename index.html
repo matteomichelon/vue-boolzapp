@@ -73,8 +73,9 @@
                             <!-- Contact -->
                             <div class="contact">
                                 <ul v-if="contacts.length">
-                                    <li v-for="contact in contacts"
-                                        v-on:click="thisChat(contact)">
+                                    <li v-for="(contact, index) in contacts"
+                                        v-bind:class="{ 'contact-view': contact.visible}"
+                                        v-on:click="thisChat(index)">
                                         <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="">
                                         <span>{{ contact.name }}</span>
                                     </li>
@@ -92,11 +93,13 @@
                     <div class="container-right">
 
                         <!-- Contact Active -->
-                        <div class="user-container display-flex">
+                        <div class="user-container display-flex"
+                            v-for="(contact) in contacts"
+                            v-if="contact.visible == true">
 
                             <div class="img-profile">
-                                <img src="img/avatar_io.jpg" alt="">
-                                <span>Nome utente</span>
+                                <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="">
+                                <span>{{contact.name}}</span>
                             </div>
                             <div class="user-icons">Icons</div>
 
