@@ -6,7 +6,7 @@ var app = new Vue(
 
         /* DATA */
         data: {
-            
+
             contacts: [
                 {
                     name: 'Michele',
@@ -97,7 +97,11 @@ var app = new Vue(
 
         /* METHODS */
         methods: {
+            thisChat ( index ) {
 
+                alert( "test" );
+
+            }
         }
     }
 );

@@ -73,7 +73,8 @@
                             <!-- Contact -->
                             <div class="contact">
                                 <ul v-if="contacts.length">
-                                    <li v-for="contact in contacts">
+                                    <li v-for="contact in contacts"
+                                        v-on:click="thisChat(index)">
                                         <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="">
                                         <span>{{ contact.name }}</span>
                                     </li>
@@ -90,15 +91,38 @@
                     <!-- Container-right -->
                     <div class="container-right">
 
-                        <!-- User-container -->
+                        <!-- Contact Active -->
                         <div class="user-container display-flex">
+
                             <div class="img-profile">
                                 <img src="img/avatar_io.jpg" alt="">
                                 <span>Nome utente</span>
                             </div>
                             <div class="user-icons">Icons</div>
+
                         </div>
-                        <!-- end User-container -->
+                        <!-- end Contact Active -->
+
+                        <!-- Messages -->
+                        <div class="messages">
+
+                            <div class="clearfix">
+                                <div class="message-received message-padding">
+
+                                    <span></span>
+                                </div>
+                            </div>
+
+                            <div class="clearfix">
+                                <div class="message-sent message-padding">
+
+                                    <span></span>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!-- end  Messages -->
 
                     </div>
                     <!-- end Container-right -->

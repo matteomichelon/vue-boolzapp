@@ -32,11 +32,7 @@ li {
     height: 100vh;
     width: 100%;
     padding: 20px 0;
-    background-image: linear-gradient(to bottom,
-    #009688 0px,
-    #009688 15vh,
-    #dddbd1 15vh,
-    #d2dbdc 100%);
+    background-image: linear-gradient(to bottom, #009688 0px, #009688 15vh, #dddbd1 15vh, #d2dbdc 100%);
 }
 
 .container {
@@ -47,6 +43,12 @@ li {
 
 .display-flex {
     display: flex;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 /* User container */
@@ -124,9 +126,10 @@ main {
 
 /* Contacts */
 
-.contact li{
+.contact li {
     border-bottom: 3px solid #f9f9f9;
     padding: 10px;
+    cursor: pointer;
 }
 
 .contact li img {
@@ -144,4 +147,34 @@ main {
 .container-right {
     width: 70%;
     background-image: url(../img/mine.jpg);
+}
+
+/* Messages */
+
+.messages {
+    padding: 50px 100px;
+}
+
+.message-padding {
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.message-received {
+    float: left;
+    background-color: white;
+    /* position: relative; */
+}
+
+.message-received span,.message-sent span {
+    position: relative;
+    top: 12px;
+    right: 5px;
+    font-size: 10px;
+    color: #aeb1b4;
+}
+
+.message-sent {
+    float: right;
+    background-color: #d0f8b2;
 }
