@@ -176,13 +176,19 @@ main {
 
 .container-right {
     width: 65%;
+    height: 100%;
     background-image: url(../img/mine.jpg);
+    flex-direction: column;
+    overflow: hidden;
+
 }
 
 /* Messages */
 
 .messages {
     padding: 50px 100px;
+    flex-grow: 1;
+    overflow-y: auto;
 }
 
 .message-padding {
@@ -208,4 +214,9 @@ main {
     float: right;
     background-color: #d0f8b2;
     margin-bottom: 15px;
+}
+
+/* Message actions */
+.message-actions{
+
 }
