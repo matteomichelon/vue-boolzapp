@@ -88,6 +88,7 @@ main {
     width: 35%;
     background-color: #fefefe;
     overflow: hidden;
+    flex-direction: column;
 }
 
 /* Notifications */
@@ -120,43 +121,55 @@ main {
     background-color: #eaeaea;
     padding: 10px;
 }
-.finder-container label{    
+
+.finder-container label {
     width: 35%;
     height: 30px;
     text-align: center;
     background-color: white;
     line-height: 30px;
     border: 1px solid lightgray;
-    border-right: 0;    
-} 
+    border-right: 0;
+}
 
 .finder-container input {
     width: 100%;
     height: 30px;
     border: 1px solid lightgray;
-    border-left: 0;  
+    border-left: 0;
 }
 
 /* Contacts */
 
+.contact-container {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
 .contact li {
-    border-bottom: 3px solid #f9f9f9;
+    border-bottom: 1px solid lightgray;
     padding: 10px;
     cursor: pointer;
 }
 
+.contact li:hover {
+    background-color: #eaeaea;
+}
+
 .contact li img {
-    width: 15%;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
 }
 
 .contact li span {
     vertical-align: top;
-    padding-left: 10px;
+    padding-left: 20px;
+    font-size: 20px;
 }
 
 .contact-view {
-    background-color: #e6e9e8;
+    background-color: lightgray;
 }
 
 /* Container-right */
