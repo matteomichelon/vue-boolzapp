@@ -7,6 +7,8 @@ var app = new Vue(
         /* DATA */
         data: {
 
+            activeContactIndex: 0,
+
             contacts: [
                 {
                     name: 'Michele',
@@ -99,35 +101,12 @@ var app = new Vue(
         methods: {
 
             // Rende visible:true oggetto selezionato
-            thisChat ( index ) {
-
-                // rendo visible:false tutti gli oggetti
-                this.contacts.forEach( ( element ) => {
-                    element.visible = false;
-                    console.log( element.visible );
-                } );
-
-                // Aggiorno a visible:true elemento selezionato
-                const object = this.contacts[ index ];
-                object.visible = !object.visible;
+            thisChat () {
 
             },
 
-            function () {
-
-            }
         }
     }
 );
 
 /* end Vue */
-
-/* Test */
-/*  console.log( 'contact:', contact, 'name:', contact.name, 'message.text:', contact.messages );
- const arrayMessage = contact.messages;
-
- arrayMessage.forEach( ( element ) => {
-     console.log( element.text );
- } ); */
-/* End Test */
-

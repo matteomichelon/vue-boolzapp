@@ -54,7 +54,7 @@
                                 <i class="fas fa-bell-slash" aria-hidden="true"></i>
                             </div>
                             <div class="notifications-text">
-                                testo
+                                o
                             </div>
                         </div>
                         <!-- end Notifications  -->
@@ -66,7 +66,7 @@
                                 <i>icon find</i>
                             </label>
 
-                            <input id="cont-finder" type="text" placeholder="test">
+                            <input id="cont-finder" type="text" placeholder="">
 
                         </div>
                         <!-- end Finder -->
@@ -75,13 +75,14 @@
                         <div class="contact-container">
 
                             <!-- Contact -->
-                            <div class="contact">
-                                <ul v-if="contacts.length">
-                                    <li v-for="(contact, index) in contacts"
-                                        v-bind:class="{ 'contact-view': contact.visible}"
-                                        v-on:click="thisChat(index)">
-                                        <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="">
-                                        <span>{{ contact.name }}</span>
+                            <div class="contact" v-for="contact in contacts">
+                                <!-- TODO: inserisci v-if se array contiene contatti -->
+                                <ul>
+                                    <li>
+                                        <img
+                                            v-bind:src="'img/avatar'+ contact.avatar +'.jpg'"
+                                            v-bind:alt="'Foto di ' + contact.name">
+                                        <span>{{contact.name}}</span>
                                     </li>
                                 </ul>
                             </div>
@@ -97,13 +98,11 @@
                     <div class="container-right display-flex">
 
                         <!-- Header contact -->
-                        <div class="header-contact display-flex"
-                            v-for="contact in contacts"
-                            v-if="contact.visible == true">
+                        <div class="header-contact display-flex">
 
                             <div class="img-profile">
-                                <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="">
-                                <span>{{contact.name}}</span>
+                                <img src=" " alt="">
+                                <span>{{}}</span>
                             </div>
                             <div class="header-user-icons">
                                 <i>ICONS</i>
@@ -113,30 +112,25 @@
                         <!-- end Header contact -->
 
                         <!-- Messages -->
-                        <div class="messages"
-                            v-for="contact in contacts"
-                            v-if="contact.visible == true">
+                        <div class="messages">
 
                             <!-- Messsage Container -->
-                            <div class="message-container"
-                                v-for="message in contact.messages">
+                            <div class="message-container">
 
                                 <!-- Mex Received -->
                                 <div class="clearfix">
-                                    <div class="message-received message-padding"
-                                        v-if="message.status == 'received'">
-                                        {{message.text}}
-                                        <span class="message-date">{{message.date}}</span>
+                                    <div class="message-received message-padding">
+                                        {{}}
+                                        <span class="message-date">{{}}</span>
                                     </div>
                                 </div>
                                 <!-- end Mex Received -->
 
                                 <!-- Mex Send -->
                                 <div class="clearfix">
-                                    <div class="message-sent message-padding"
-                                        v-if="message.status == 'sent'">
-                                        {{message.text}}
-                                        <span class="message-date">{{message.date}}</span>
+                                    <div class="message-sent message-padding">
+                                        {{}}
+                                        <span class="message-date">{{}}</span>
                                     </div>
                                 </div>
                                 <!-- end Mex Send -->
