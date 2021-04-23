@@ -30,7 +30,8 @@ li {
 
 .wrapper {
     height: 100vh;
-    width: 100%;
+    /* Blocchiamo il nostro wrapper ad una certa larghezza */
+    min-width: 900px;
     padding: 20px 0;
     background-image: linear-gradient(to bottom, #009688 0px, #009688 15vh, #dddbd1 15vh, #d2dbdc 100%);
 }
@@ -51,9 +52,9 @@ li {
     clear: both;
 }
 
-/* User container */
+/* Header Contact */
 
-.user-container {
+.header-contact {
     align-items: center;
     background-color: #e7e7e7;
     height: 75px;
@@ -61,19 +62,20 @@ li {
 }
 
 .img-profile img {
-    width: 15%;
+    width: 60px;
+    height: 60px;
     padding: 10px;
     border-radius: 50%;
     vertical-align: middle;
 }
 
-.img-profile span {
-    vertical-align: middle;
+.header-user-icons i {
+    padding-right: 15px;
+    font-size: 20px;
+    color: #aeb1b4;
 }
 
-.user-icons {
-    padding-right: 15px;
-}
+
 
 /* MAIN */
 
@@ -85,7 +87,7 @@ main {
 /* Container-left */
 
 .container-left {
-    width: 30%;
+    width: 35%;
     background-color: #fefefe;
     overflow: hidden;
 }
@@ -149,7 +151,7 @@ main {
 /* Container-right */
 
 .container-right {
-    width: 70%;
+    width: 65%;
     background-image: url(../img/mine.jpg);
 }
 

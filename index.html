@@ -36,15 +36,17 @@
                     <!-- Container-left -->
                     <div class="container-left">
 
-                        <!-- User-container -->
-                        <div class="user-container display-flex">
+                        <!-- Header contact -->
+                        <div class="header-contact display-flex">
                             <div class="img-profile">
                                 <img src="img/avatar_io.jpg" alt="">
                                 <span>Nome utente</span>
                             </div>
-                            <div class="user-icons">Icons</div>
+                            <div class="header-user-icons">
+                                <i>ICONS</i>
+                            </div>
                         </div>
-                        <!-- end User-container -->
+                        <!-- end Header contact -->
 
                         <!-- Servin Container  -->
                         <div class="servin-container display-flex">
@@ -92,8 +94,8 @@
                     <!-- Container-right -->
                     <div class="container-right">
 
-                        <!-- Contact Active -->
-                        <div class="user-container display-flex"
+                        <!-- Header contact -->
+                        <div class="header-contact display-flex"
                             v-for="contact in contacts"
                             v-if="contact.visible == true">
 
@@ -101,10 +103,12 @@
                                 <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="">
                                 <span>{{contact.name}}</span>
                             </div>
-                            <div class="user-icons">Icons</div>
+                            <div class="header-user-icons">
+                                <i>ICONS</i>
+                            </div>
 
                         </div>
-                        <!-- end Contact Active -->
+                        <!-- end Header contact -->
 
                         <!-- Messages -->
                         <div class="messages"
