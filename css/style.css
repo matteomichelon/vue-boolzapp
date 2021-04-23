@@ -177,23 +177,26 @@ main {
 .container-right {
     width: 65%;
     height: 100%;
-    background-image: url(../img/mine.jpg);
     flex-direction: column;
     overflow: hidden;
-
 }
 
 /* Messages */
 
 .messages {
-    padding: 50px 100px;
+    padding: 50px;
     flex-grow: 1;
     overflow-y: auto;
+    background-image: url(../img/mine.jpg);
+    /* per evitare di avere altri oggetti nella stessa riga */
+    clear: both;
 }
 
 .message-padding {
     padding: 15px;
-    border-radius: 15px;
+    border-radius: 10px;
+    /* per evitare sovrepposizione testo */
+    max-width: 500px;
 }
 
 .message-received {
@@ -202,7 +205,13 @@ main {
     margin-bottom: 15px;
 }
 
-.message-received span, .message-sent span {
+.message-sent {
+    float: right;
+    background-color: #d0f8b2;
+    margin-bottom: 15px;
+}
+
+.messages .message-date {
     position: relative;
     top: 12px;
     right: 5px;
@@ -210,13 +219,25 @@ main {
     color: #aeb1b4;
 }
 
-.message-sent {
-    float: right;
-    background-color: #d0f8b2;
-    margin-bottom: 15px;
+/* Message actions */
+
+.message-actions {
+    padding: 10px;
+    align-items: center;
 }
 
-/* Message actions */
-.message-actions{
+.send-message-input{
+    flex-grow: 1;
+}
 
+.send-message-input input {
+    width: 100%;
+    border: 1px solid lightblue;
+    height: 35px;
+    padding: 10px;
+}
+
+.smile, .microphone {
+    padding: 20px;
+    font-size: 27px;
 }

@@ -126,7 +126,7 @@
                                     <div class="message-received message-padding"
                                         v-if="message.status == 'received'">
                                         {{message.text}}
-                                        <span>{{message.date}}</span>
+                                        <span class="message-date">{{message.date}}</span>
                                     </div>
                                 </div>
                                 <!-- end Mex Received -->
@@ -136,7 +136,7 @@
                                     <div class="message-sent message-padding"
                                         v-if="message.status == 'sent'">
                                         {{message.text}}
-                                        <span>{{message.date}}</span>
+                                        <span class="message-date">{{message.date}}</span>
                                     </div>
                                 </div>
                                 <!-- end Mex Send -->
@@ -149,8 +149,17 @@
                         <!-- end  Messages -->
 
                         <!-- Message actions -->
-                        <div class="message-actions">
-                            test
+                        <div class="message-actions display-flex">
+                            <div class="smile">
+                                icon smile
+                            </div>
+                            <div class="send-message-input">
+                                <input type="text" placeholder="message">
+                            </div>
+
+                            <div class="microphone">
+                                icon phone
+                            </div>
                         </div>
                         <!-- end Messsage actions -->
 
