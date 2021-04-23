@@ -95,7 +95,10 @@ var app = new Vue(
                         }
                     ],
                 },
-            ]
+            ],
+
+            /* test */
+            test: '',
 
         },
 
@@ -107,23 +110,46 @@ var app = new Vue(
                 const newMessage = this.pushText;
                 // this.activeContactIndex per avere l'indice dell'utente attivo
                 const arraytMessage = this.contacts[ this.activeContactIndex ].messages;
-                const currentDate = dayjs().format('D/MM/YYYY HH:mm:ss');
+                const currentDate = dayjs().format( 'D/MM/YYYY HH:mm:ss' );
 
                 // Creo il nuovo oggetto con il messaggio, 
                 // data e status:'sent'
-                const newMessageObject ={
+                const newMessageObject = {
                     date: currentDate,
                     text: newMessage,
-                    status:'sent'
+                    status: 'sent'
                 }
-                
+
                 // Aggiungo l'oggetto creato all'array di messaggi 
-                arraytMessage.push(newMessageObject);
-                
+                arraytMessage.push( newMessageObject );
+
+                // Dopo 1 secondo richiamo la funzione autoReply
+                setTimeout(this.autoReply,1000);
+
                 // Effettuo il reset del mio input
                 this.pushText = '';
-                
+
+            },
+
+            autoReply () {
+
+                const currentDate = dayjs().format( 'D/MM/YYYY HH:mm:ss' );
+                const arraytMessage = this.contacts[ this.activeContactIndex ].messages;
+                const replyMessage = 'ok';
+
+                const newMessageObject = {
+                    date: currentDate,
+                    text: replyMessage,
+                    status: 'received'
+                }
+
+
+                arraytMessage.push( newMessageObject );
+
+                console.log( this.test );
             }
+
+
 
 
         }

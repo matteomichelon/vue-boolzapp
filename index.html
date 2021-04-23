@@ -158,6 +158,12 @@
                                 <input type="text" placeholder="message"
                                     v-model="pushText"
                                     v-on:keyup.enter="insertNewMessage">
+                                    <!-- Test -->
+                                    <input type="text" placeholder="setTimeout"
+                                    v-model="test"
+                                    v-on:keyup.enter="autoReply">
+                                    {{test}}
+                                    <!-- end test -->
                             </div>
 
                             <div class="microphone">
