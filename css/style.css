@@ -14,6 +14,10 @@
 
 /* COMMON */
 
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
 img {
     width: 100%;
     height: auto;
@@ -59,6 +63,11 @@ li {
     background-color: #e7e7e7;
     height: 75px;
     justify-content: space-between;
+    border-right: 1px solid #D6D6D6;
+}
+
+.header-contact span{
+    font-weight: 600;
 }
 
 .img-profile img {
@@ -74,6 +83,19 @@ li {
     font-size: 20px;
     color: #aeb1b4;
 }
+
+.img-profile{
+    align-items: center;
+}
+
+
+span.last-login{
+    font-size: 10px;
+    color: #7A8184;
+    font-weight: 400;
+    display: block;
+}
+
 
 /* MAIN */
 
@@ -115,6 +137,17 @@ main {
     padding-left: 10px;
 }
 
+.notifications-text span{
+    display: block;
+    font-weight: 600;
+}
+
+.notifications-text a{
+    font-size: 15px;
+    text-decoration: revert;
+    color: #6090A5;
+}
+
 /* Finder */
 
 .finder-container {
@@ -123,20 +156,33 @@ main {
 }
 
 .finder-container label {
-    width: 35%;
+    width: 20%;
     height: 30px;
     text-align: center;
     background-color: white;
     line-height: 30px;
     border: 1px solid lightgray;
     border-right: 0;
+    
+}
+
+.finder-container a{
+    color: #B6B9BC;
 }
 
 .finder-container input {
     width: 100%;
     height: 30px;
     border: 1px solid lightgray;
-    border-left: 0;
+    border-left: 0;  
+    padding: 5px;
+    
+}
+
+.finder-container input::placeholder{
+    color: #B6B9BC;
+
+
 }
 
 /* Contacts */
