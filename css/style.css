@@ -92,26 +92,27 @@ main {
     overflow: hidden;
 }
 
-/* Servin Container */
+/* Notifications */
 
-.servin-container {
+.notifications-container {
     align-items: center;
     padding: 10px;
     background-color: #82d6fb;
+    display: flex;
 }
 
-.bell-slash {
+.bell {
     padding: 10px;
     background-color: white;
     border-radius: 50%;
     font-size: 20px;
 }
 
-.bell-slash i {
+.bell i {
     color: #82d6fb;
 }
 
-.servin-text {
+.notifications-text {
     padding-left: 10px;
 }
 
