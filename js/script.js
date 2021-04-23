@@ -96,10 +96,6 @@ var app = new Vue(
                     ],
                 },
             ],
-
-            /* test */
-            test: '',
-
         },
 
         /* METHODS */
@@ -123,34 +119,28 @@ var app = new Vue(
                 // Aggiungo l'oggetto creato all'array di messaggi 
                 arraytMessage.push( newMessageObject );
 
-                // Dopo 1 secondo richiamo la funzione autoReply
-                setTimeout(this.autoReply,1000);
-
-                // Effettuo il reset del mio input
+                // Reset del mio input
                 this.pushText = '';
 
+                //====
+                // Funzione di risposta automatica dopo un tempo prestabilito
+                //====
+                setTimeout( () => {
+
+                    // Creo il nuovo oggetto con il messaggio, 
+                    // data e status:'received'
+                    const newMessageObject = {
+                        date: currentDate,
+                        text: 'ok',
+                        status: 'received'
+                    }
+
+                    // Aggiungo l'oggetto creato all'array di messaggi 
+                    arraytMessage.push( newMessageObject );
+
+                    // La risposta sarà dopo 1 secondo
+                }, 1000 );
             },
-
-            autoReply () {
-
-                const currentDate = dayjs().format( 'D/MM/YYYY HH:mm:ss' );
-                const arraytMessage = this.contacts[ this.activeContactIndex ].messages;
-                const replyMessage = 'ok';
-
-                const newMessageObject = {
-                    date: currentDate,
-                    text: replyMessage,
-                    status: 'received'
-                }
-
-
-                arraytMessage.push( newMessageObject );
-
-                console.log( this.test );
-            }
-
-
-
 
         }
     }
