@@ -75,8 +75,6 @@ li {
     color: #aeb1b4;
 }
 
-
-
 /* MAIN */
 
 main {
@@ -119,12 +117,24 @@ main {
 /* Finder */
 
 .finder-container {
-    background-color: #f9f9f9;
-    padding: 5px;
+    background-color: #eaeaea;
+    padding: 10px;
 }
-
-.finder {
+.finder-container label{    
+    width: 35%;
+    height: 30px;
+    text-align: center;
     background-color: white;
+    line-height: 30px;
+    border: 1px solid lightgray;
+    border-right: 0;    
+} 
+
+.finder-container input {
+    width: 100%;
+    height: 30px;
+    border: 1px solid lightgray;
+    border-left: 0;  
 }
 
 /* Contacts */
@@ -145,7 +155,7 @@ main {
     padding-left: 10px;
 }
 
-.contact-view{
+.contact-view {
     background-color: #e6e9e8;
 }
 
@@ -173,7 +183,7 @@ main {
     margin-bottom: 15px;
 }
 
-.message-received span,.message-sent span {
+.message-received span, .message-sent span {
     position: relative;
     top: 12px;
     right: 5px;
