@@ -9,6 +9,8 @@ var app = new Vue(
 
             activeContactIndex: 0,
 
+            pushText: '',
+
             contacts: [
                 {
                     name: 'Michele',
@@ -100,10 +102,29 @@ var app = new Vue(
         /* METHODS */
         methods: {
 
-            // Rende visible:true oggetto selezionato
-            thisChat () {
+            // Funzione che mi permette di inviare un nuovo messaggio dell'utente attivo
+            insertNewMessage () {
+                const newMessage = this.pushText;
+                // this.activeContactIndex per avere l'indice dell'utente attivo
+                const arraytMessage = this.contacts[ this.activeContactIndex ].messages;
+                const currentDate = dayjs().format('D/MM/YYYY HH:mm:ss');
 
-            },
+                // Creo il nuovo oggetto con il messaggio, 
+                // data e status:'sent'
+                const newMessageObject ={
+                    date: currentDate,
+                    text: newMessage,
+                    status:'sent'
+                }
+                
+                // Aggiungo l'oggetto creato all'array di messaggi 
+                arraytMessage.push(newMessageObject);
+                
+                // Effettuo il reset del mio input
+                this.pushText = '';
+                
+            }
+
 
         }
     }
