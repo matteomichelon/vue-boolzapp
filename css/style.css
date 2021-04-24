@@ -89,7 +89,8 @@ li {
 }
 
 
-span.last-login, span.last-chat {
+span.last-login,
+span.last-chat {
     font-size: 10px;
     color: #7A8184;
     font-weight: 400;
@@ -211,17 +212,15 @@ main {
 .contact li span {
     vertical-align: top;
     padding-left: 20px;
-    
+
 }
 
-.contact-name{
+.contact-name {
     flex-grow: 1;
     font-size: 20px;
 }
 
-.last-chat{
-
-}
+.last-chat {}
 
 .active {
     background-color: lightgray;
@@ -254,6 +253,7 @@ main {
     border-radius: 10px;
     /* per evitare sovrepposizione testo */
     max-width: 500px;
+    min-width: 300px;
 }
 
 .message-received {
@@ -268,13 +268,58 @@ main {
     margin-bottom: 15px;
 }
 
-.messages .message-date {
+.message-received,
+.message-sent {
     position: relative;
-    top: 12px;
-    right: 5px;
+}
+
+
+.messages .message-date {
+    position: absolute;
+    top: 35px;
+    right: 12px;
     font-size: 10px;
     color: #aeb1b4;
 }
+
+/* Chevron - Info Message */
+
+.chevron-icon {
+    font-size: 15px;
+    position: absolute;
+    top: 13px;
+    right: 18px;
+    display: none;
+
+}
+
+.chevron-icon i {
+    color: #B8BABC;
+}
+
+.info-message {
+    position: absolute;
+    background-color: #FFFFFF;
+    text-align: center;
+    padding: 10px;
+    top: 46px;
+    right: 0;
+    line-height: 1.9;
+    border-radius: 5px;
+    box-shadow: 0px 1px 18px -3px rgba(0, 0, 0, 0.46);
+    -webkit-box-shadow: 0px 1px 18px -3px rgb(0 0 0 / 45%);
+    z-index: 1;
+    display: none;
+}
+
+div.info-message {
+    cursor: pointer;
+}
+
+.message-received:hover .chevron-icon, .message-sent:hover .chevron-icon {
+    display: block;
+}
+
 
 /* Message actions */
 

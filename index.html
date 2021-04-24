@@ -77,10 +77,10 @@
                             </label>
 
                             <input id="finder" type="text" placeholder="Cerca o inizia una nuova chat"
-                            v-model="userFilterText"
-                            v-on:keyup="filterContact()">
-                            
-                            
+                                v-model="userFilterText"
+                                v-on:keyup="filterContact()">
+
+
 
                         </div>
                         <!-- end Finder -->
@@ -124,7 +124,8 @@
                                     v-bind:alt="'Foto di ' + contacts[activeContactIndex].name">
                                 <div>
                                     {{contacts[activeContactIndex].name}}
-                                    <span class="last-login">Ultimo accesso il {{lastAccess(contacts[activeContactIndex])}}</span>
+                                    <span class="last-login">Ultimo accesso il
+                                        {{lastAccess(contacts[activeContactIndex])}}</span>
                                 </div>
                             </div>
                             <div class="header-user-icons">
@@ -149,6 +150,21 @@
                                         v-if="message.status == 'received'">
                                         {{message.text}}
                                         <span class="message-date">{{message.date}}</span>
+
+                                        <!-- Chevron icon -->
+                                        <span class="chevron-icon">
+                                            <a href="#">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </a>
+                                        </span>
+                                        <!-- end Chevron icon -->
+
+                                        <!-- Info Message -->
+                                        <div class="info-message">
+                                            <div>Info messaggio</div>
+                                            <div>Cancella messaggio</div>
+                                        </div>
+                                        <!-- end Info Message -->
                                     </div>
                                 </div>
                                 <!-- end Mex Received -->
@@ -159,6 +175,22 @@
                                         v-if="message.status == 'sent'">
                                         {{message.text}}
                                         <span class="message-date">{{message.date}}</span>
+
+                                        <!-- Chevron icon -->
+                                        <span class="chevron-icon">
+                                            <a href="#">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </a>
+                                        </span>
+                                        <!-- end Chevron icon -->
+
+                                         <!-- Info Message -->
+                                         <div class="info-message">
+                                            <div>Info messaggio</div>
+                                            <div>Cancella messaggio</div>
+                                        </div>
+                                        <!-- end Info Message -->
+
                                     </div>
                                 </div>
                                 <!-- end Mex Send -->
