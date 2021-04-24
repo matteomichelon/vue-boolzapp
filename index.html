@@ -47,7 +47,7 @@
                         <div class="header-contact display-flex">
                             <div class="img-profile">
                                 <img src="img/avatar_io.jpg" alt="">
-                                <span>Nome utente</span>
+                                <span>Matteo Michelon</span>
                             </div>
                             <div class="header-user-icons">
                                 <a href="#"><i class="fas fa-circle-notch"></i></a>
@@ -160,9 +160,13 @@
                                         <!-- end Chevron icon -->
 
                                         <!-- Info Message -->
-                                        <div class="info-message">
-                                            <div>Info messaggio</div>
-                                            <div>Cancella messaggio</div>
+                                        <div class="message-option">
+                                            <div class="info-message">Info messaggio</div>
+                                            <div class="delete-message"
+                                                v-on:click="nomeFunzione(message)">
+                                                Cancella messaggio
+
+                                            </div>
                                         </div>
                                         <!-- end Info Message -->
                                     </div>
@@ -184,10 +188,11 @@
                                         </span>
                                         <!-- end Chevron icon -->
 
-                                         <!-- Info Message -->
-                                         <div class="info-message">
-                                            <div>Info messaggio</div>
-                                            <div>Cancella messaggio</div>
+                                        <!-- Info Message -->
+                                        <div class="message-option">
+                                            <div class="info-message">Info messaggio</div>
+                                            <div class="delete-message"
+                                                v-on:click="nomeFunzione(message)">Cancella messaggio</div>
                                         </div>
                                         <!-- end Info Message -->
 

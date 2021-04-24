@@ -297,7 +297,7 @@ main {
     color: #B8BABC;
 }
 
-.info-message {
+.message-option {
     position: absolute;
     background-color: #FFFFFF;
     text-align: center;
@@ -309,16 +309,25 @@ main {
     box-shadow: 0px 1px 18px -3px rgba(0, 0, 0, 0.46);
     -webkit-box-shadow: 0px 1px 18px -3px rgb(0 0 0 / 45%);
     z-index: 1;
-    display: none;
+    /* TODO */
+    /* display: none; */
 }
 
-div.info-message {
+div.message-option {
     cursor: pointer;
 }
 
-.message-received:hover .chevron-icon, .message-sent:hover .chevron-icon {
+div.message-option .info-message:hover,
+div.message-option .delete-message:hover {
+    background-color: #EAEAEA;
+}
+
+.message-received:hover .chevron-icon,
+.message-sent:hover .chevron-icon {
     display: block;
 }
+
+
 
 
 /* Message actions */

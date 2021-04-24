@@ -167,6 +167,28 @@ var app = new Vue(
                 }, 1000 );
             },
 
+            nomeFunzione ( messageObject ) {
+                // Prelevo l'array di messaggi dell'utente
+                const arrayObjectContact = this.contacts[ this.activeContactIndex ];
+                const arrayMessages = arrayObjectContact.messages;
+                let indexToDelete = -1;
+
+                // Confronto il mio oggetto con l'array di oggetti
+                // e prelevo l'indice dell'oggetto uguale
+                arrayMessages.forEach( ( element, index ) => {
+                    //console.log( element, index );
+                    if ( element == messageObject ) {
+                        indexToDelete = index;
+                    }
+                } );
+
+                // Rimuovo l'elemento indice dall'array
+                const arrayObjectRemove = arrayMessages.splice( indexToDelete, 1 );
+
+            },
+
+
+
             /* TODO vedi se riesci a giocare con le date */
             lastAccess ( activeContact ) {
                 // Dichiaro l'array di messaggi dell'utente attivo 
