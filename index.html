@@ -76,7 +76,11 @@
                                 <a href="#"><i class="fas fa-search"></i></a>
                             </label>
 
-                            <input id="finder" type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input id="finder" type="text" placeholder="Cerca o inizia una nuova chat"
+                            v-model="userFilterText"
+                            v-on:keyup="filterContact()">
+                            
+                            
 
                         </div>
                         <!-- end Finder -->
@@ -91,7 +95,7 @@
                                 v-bind:class="{active : index == activeContactIndex}"
                                 v-on:click="{activeContactIndex = index}">
 
-                                <ul>
+                                <ul v-if="contact.visible == true">
                                     <li>
                                         <img
                                             v-bind:src="'img/avatar'+ contact.avatar +'.jpg'"
@@ -119,7 +123,7 @@
                                     v-bind:alt="'Foto di ' + contacts[activeContactIndex].name">
                                 <div>
                                     {{contacts[activeContactIndex].name}}
-                                    <span class="last-login">Ultimo accesso oggi alle </span>
+                                    <span class="last-login">Ultimo accesso il {{lastAccess(contacts[activeContactIndex])}}</span>
                                 </div>
                             </div>
                             <div class="header-user-icons">

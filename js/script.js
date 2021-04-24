@@ -11,6 +11,8 @@ var app = new Vue(
 
             pushText: '',
 
+            userFilterText: '',
+
             contacts: [
                 {
                     name: 'Michele',
@@ -37,7 +39,7 @@ var app = new Vue(
                 {
                     name: 'Fabio',
                     avatar: '_2',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '20/03/2020 16:30:00',
@@ -59,7 +61,7 @@ var app = new Vue(
                 {
                     name: 'Samuele',
                     avatar: '_3',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '28/03/2020 10:10:40',
@@ -81,7 +83,7 @@ var app = new Vue(
                 {
                     name: 'Luisa',
                     avatar: '_4',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -100,6 +102,29 @@ var app = new Vue(
 
         /* METHODS */
         methods: {
+
+            // Funzione che mi permette di filtrare i contatti
+            filterContact () {
+                // Scorro la lista dei contatti
+                this.contacts.forEach( element => {
+
+                    // Confronto la stringa inserita con i nome dei contatti
+                    // entrambi in lowercase
+                    const nameLower = element.name.toLowerCase();
+                    const valueSearch = nameLower.includes( this.userFilterText.toLowerCase() );
+                    //console.log( valueSearch );
+
+                    // Se la stringa inserita è presente nel nome 
+                    // la visibilità dell'utente sarà true
+                    if ( valueSearch ) {
+                        element.visible = true;
+                        // Altrimenti nasconderò l'utente
+                    } else {
+                        element.visible = false;
+                    }
+
+                } );
+            },
 
             // Funzione che mi permette di inviare un nuovo messaggio dell'utente attivo
             insertNewMessage () {
@@ -141,6 +166,16 @@ var app = new Vue(
                     // La risposta sarà dopo 1 secondo
                 }, 1000 );
             },
+
+            /* TODO vedi se riesci a giocare con le date */
+            lastAccess ( activeContact ) {
+                // Dichiaro l'array di messaggi dell'utente attivo 
+                const arrayMessages = activeContact.messages;
+                // Prelevo la data dall'ultimo oggetto del mio array
+                const lastMessage = arrayMessages[ ( arrayMessages.length - 1 ) ].date;
+
+                return lastMessage;
+            }
 
         }
     }
