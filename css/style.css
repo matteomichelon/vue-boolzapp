@@ -14,7 +14,7 @@
 
 /* COMMON */
 
-body{
+body {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -66,7 +66,7 @@ li {
     border-right: 1px solid #D6D6D6;
 }
 
-.header-contact span{
+.header-contact span {
     font-weight: 600;
 }
 
@@ -84,12 +84,12 @@ li {
     color: #aeb1b4;
 }
 
-.img-profile{
+.img-profile {
     align-items: center;
 }
 
 
-span.last-login{
+span.last-login, span.last-chat {
     font-size: 10px;
     color: #7A8184;
     font-weight: 400;
@@ -100,7 +100,7 @@ span.last-login{
 /* MAIN */
 
 main {
-    height: calc( 100% - 10px);
+    height: calc(100% - 10px);
     width: 100%;
 }
 
@@ -137,12 +137,12 @@ main {
     padding-left: 10px;
 }
 
-.notifications-text span{
+.notifications-text span {
     display: block;
     font-weight: 600;
 }
 
-.notifications-text a{
+.notifications-text a {
     font-size: 15px;
     text-decoration: revert;
     color: #6090A5;
@@ -163,10 +163,10 @@ main {
     line-height: 30px;
     border: 1px solid lightgray;
     border-right: 0;
-    
+
 }
 
-.finder-container a{
+.finder-container a {
     color: #B6B9BC;
 }
 
@@ -174,12 +174,12 @@ main {
     width: 100%;
     height: 30px;
     border: 1px solid lightgray;
-    border-left: 0;  
+    border-left: 0;
     padding: 5px;
-    
+
 }
 
-.finder-container input::placeholder{
+.finder-container input::placeholder {
     color: #B6B9BC;
 
 
@@ -211,12 +211,23 @@ main {
 .contact li span {
     vertical-align: top;
     padding-left: 20px;
+    
+}
+
+.contact-name{
+    flex-grow: 1;
     font-size: 20px;
+}
+
+.last-chat{
+
 }
 
 .active {
     background-color: lightgray;
 }
+
+
 
 /* Container-right */
 
@@ -272,7 +283,7 @@ main {
     background-color: #F3EEEA;
 }
 
-.send-message-input{
+.send-message-input {
     flex-grow: 1;
 }
 
@@ -284,11 +295,13 @@ main {
     border-radius: 5px;
 }
 
-.smile, .microphone {
+.smile,
+.microphone {
     padding: 15px 30px;
     font-size: 25px;
 }
 
-.smile i, .microphone i{
+.smile i,
+.microphone i {
     color: #6B7477;
 }

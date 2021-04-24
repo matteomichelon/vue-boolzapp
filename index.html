@@ -96,11 +96,12 @@
                                 v-on:click="{activeContactIndex = index}">
 
                                 <ul v-if="contact.visible == true">
-                                    <li>
+                                    <li class="display-flex">
                                         <img
                                             v-bind:src="'img/avatar'+ contact.avatar +'.jpg'"
                                             v-bind:alt="'Foto di ' + contact.name">
-                                        <span>{{contact.name}}</span>
+                                        <span class="contact-name">{{contact.name}}</span>
+                                        <span class="last-chat">{{lastAccess(contacts[index])}}</span>
                                     </li>
                                 </ul>
                             </div>
