@@ -142,7 +142,7 @@
 
                             <!-- Messsage Container -->
                             <div class="message-container"
-                                v-for="message in contacts[activeContactIndex].messages">
+                                v-for="(message, index) in contacts[activeContactIndex].messages">
 
                                 <!-- Mex Received -->
                                 <div class="clearfix">
@@ -152,20 +152,21 @@
                                         <span class="message-date">{{message.date}}</span>
 
                                         <!-- Chevron icon -->
-                                        <span class="chevron-icon">
+                                        <div class="chevron-icon"
+                                            v-on:click="optionView(message, index)">
                                             <a href="#">
                                                 <i class="fas fa-chevron-down"></i>
                                             </a>
-                                        </span>
+                                        </div>
                                         <!-- end Chevron icon -->
 
                                         <!-- Info Message -->
-                                        <div class="message-option">
+                                        <div class="message-option display-none"
+                                            v-bind:class="{ 'display-block': message.chevron }">
                                             <div class="info-message">Info messaggio</div>
                                             <div class="delete-message"
-                                                v-on:click="nomeFunzione(message)">
+                                                v-on:click="deleteMessage(message)">
                                                 Cancella messaggio
-
                                             </div>
                                         </div>
                                         <!-- end Info Message -->
@@ -181,7 +182,8 @@
                                         <span class="message-date">{{message.date}}</span>
 
                                         <!-- Chevron icon -->
-                                        <span class="chevron-icon">
+                                        <span class="chevron-icon"
+                                            v-on:click="optionView(message, index)">
                                             <a href="#">
                                                 <i class="fas fa-chevron-down"></i>
                                             </a>
@@ -189,10 +191,11 @@
                                         <!-- end Chevron icon -->
 
                                         <!-- Info Message -->
-                                        <div class="message-option">
+                                        <div class="message-option display-none"
+                                            v-bind:class="{ 'display-block': message.chevron }">
                                             <div class="info-message">Info messaggio</div>
                                             <div class="delete-message"
-                                                v-on:click="nomeFunzione(message)">Cancella messaggio</div>
+                                                v-on:click="deleteMessage(message)">Cancella messaggio</div>
                                         </div>
                                         <!-- end Info Message -->
 
