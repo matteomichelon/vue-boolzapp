@@ -310,11 +310,11 @@ main {
     padding: 10px;
     top: 46px;
     right: 0;
+    z-index: 1;
     line-height: 1.9;
     border-radius: 5px;
     box-shadow: 0px 1px 18px -3px rgba(0, 0, 0, 0.46);
     -webkit-box-shadow: 0px 1px 18px -3px rgb(0 0 0 / 45%);
-    z-index: 1;
 }
 
 div.message-option {
@@ -330,9 +330,6 @@ div.message-option .delete-message:hover {
 .message-sent:hover .chevron-icon {
     display: block;
 }
-
-
-
 
 /* Message actions */
 

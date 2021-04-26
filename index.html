@@ -80,8 +80,6 @@
                                 v-model="userFilterText"
                                 v-on:keyup="filterContact()">
 
-
-
                         </div>
                         <!-- end Finder -->
 
@@ -163,11 +161,18 @@
                                         <!-- Info Message -->
                                         <div class="message-option display-none"
                                             v-bind:class="{ 'display-block': message.chevron }">
-                                            <div class="info-message">Info messaggio</div>
-                                            <div class="delete-message"
-                                                v-on:click="deleteMessage(message)">
-                                                Cancella messaggio
-                                            </div>
+                                            <ul>
+
+                                                <li class="info-message">
+                                                    Info messaggio
+                                                </li>
+
+                                                <li class="delete-message"
+                                                    v-on:click="deleteMessage(index)">
+                                                    Cancella messaggio
+                                                </li>
+
+                                            </ul>
                                         </div>
                                         <!-- end Info Message -->
                                     </div>
@@ -193,9 +198,18 @@
                                         <!-- Info Message -->
                                         <div class="message-option display-none"
                                             v-bind:class="{ 'display-block': message.chevron }">
-                                            <div class="info-message">Info messaggio</div>
-                                            <div class="delete-message"
-                                                v-on:click="deleteMessage(message)">Cancella messaggio</div>
+                                            <ul>
+
+                                                <li class="info-message">
+                                                    Info messaggio
+                                                </li>
+
+                                                <li class="delete-message"
+                                                    v-on:click="deleteMessage(message)">
+                                                    Cancella messaggio
+                                                </li>
+
+                                            </ul>
                                         </div>
                                         <!-- end Info Message -->
 

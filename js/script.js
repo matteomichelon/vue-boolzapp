@@ -116,13 +116,16 @@ var app = new Vue(
 
             // Funzione che mi permette di filtrare i contatti
             filterContact () {
+                //Stringa inserita toLowerCase
+                const userFilerTextToLowerCase = this.userFilterText.toLowerCase();
+
                 // Scorro la lista dei contatti
                 this.contacts.forEach( element => {
 
                     // Confronto la stringa inserita con i nome dei contatti
                     // entrambi in lowercase
                     const nameLower = element.name.toLowerCase();
-                    const valueSearch = nameLower.includes( this.userFilterText.toLowerCase() );
+                    const valueSearch = nameLower.includes( userFilerTextToLowerCase );
                     //console.log( valueSearch );
 
                     // Se la stringa inserita è presente nel nome 
@@ -174,35 +177,24 @@ var app = new Vue(
                     }
 
                     // Aggiungo l'oggetto creato all'array di messaggi 
-                    arraytMessage.push( newMessageObject );
+                    contactActiveNow.push( newMessageObject );
 
                     // La risposta sarà dopo 1 secondo
                 }, 1000 );
             },
 
-            deleteMessage ( messageObject ) {
+            deleteMessage ( messageIndex ) {
                 // Prelevo l'array di messaggi dell'utente
                 const arrayObjectContact = this.contacts[ this.activeContactIndex ];
                 const arrayMessages = arrayObjectContact.messages;
-                let indexToDelete = -1;
-
-                // Confronto il mio oggetto con l'array di oggetti
-                // e prelevo l'indice dell'oggetto uguale
-                arrayMessages.forEach( ( element, index ) => {
-                    //console.log( element, index );
-                    if ( element == messageObject ) {
-                        indexToDelete = index;
-                    }
-                } );
-
+               
                 // Rimuovo l'elemento indice dall'array
-                const arrayObjectRemove = arrayMessages.splice( indexToDelete, 1 );
+                arrayMessages.splice( messageIndex, 1 );
+
+                // Active message false! quando viene aggiunta funzione
 
             },
 
-
-
-            /* TODO vedi se riesci a giocare con le date */
             lastAccess ( activeContact ) {
                 // Dichiaro l'array di messaggi dell'utente attivo 
                 const arrayMessages = activeContact.messages;
@@ -215,6 +207,8 @@ var app = new Vue(
             optionView ( message ) {
                 const arrayContacts = this.contacts;
 
+
+
                 // Resetto tutte le chevron
                 arrayContacts.forEach( element => {
                     const arrayMessages = element.messages;
@@ -223,8 +217,10 @@ var app = new Vue(
                         console.log( element.chevron );
                     } );
                 } );
+
                 // Rendo true la chevron corrente
-                message.chevron = true;
+                message.chevron = !message.chevron;
+
 
 
 
