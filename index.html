@@ -98,8 +98,10 @@
                                         <img
                                             v-bind:src="'img/avatar'+ contact.avatar +'.jpg'"
                                             v-bind:alt="'Foto di ' + contact.name">
-                                        <span class="contact-name">{{contact.name}}</span>
-                                        <span class="last-chat">{{lastAccess(contacts[index])}}</span>
+                                        <span class="contact-name">{{contact.name}}
+                                            <span class="last-text-chat">{{lastMessage(contact)}}</span>
+                                        </span>
+                                        <span class="last-date-chat">{{lastAccess(contacts[index])}}</span>
                                     </li>
                                 </ul>
                             </div>

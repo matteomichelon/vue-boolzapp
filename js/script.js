@@ -206,6 +206,23 @@ var app = new Vue(
                 return lastMessage;
             },
 
+            lastMessage ( contact ) {
+                // Prelevo l'array dei messaggi
+                const arrayMessages = contact.messages;
+                // Trovo l'ultimo messaggio
+                const lastMessage = arrayMessages[ arrayMessages.length - 1 ].text;
+
+                // Salvo in una variabile il mio messaggio con massimo 30 caratteri
+                let lastMessageSplice = lastMessage.slice( 0, 30 );
+
+                // Se il messaggio supera i 30 caratteri aggiungo "..."
+                if ( lastMessageSplice.length >= 30 ) {
+                    lastMessageSplice += "...";
+                }
+
+                return lastMessageSplice;
+            },
+
             optionView ( index ) {
 
                 if ( this.activeMessage === index ) {
@@ -213,7 +230,7 @@ var app = new Vue(
                     this.activeMessage = false
 
                 } else {
-                    
+
                     this.activeMessage = index;
                 }
 

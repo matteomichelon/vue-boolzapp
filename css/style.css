@@ -90,8 +90,9 @@ li {
 
 
 span.last-login,
-span.last-chat {
-    font-size: 10px;
+span.last-date-chat,
+span.last-text-chat {
+    font-size: 13px;
     color: #7A8184;
     font-weight: 400;
     display: block;
@@ -218,6 +219,13 @@ main {
 .contact-name {
     flex-grow: 1;
     font-size: 20px;
+    position: relative;
+}
+
+.last-text-chat {
+    position: absolute;
+    top: 34px;
+    left: 0;
 }
 
 
