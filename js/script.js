@@ -116,6 +116,11 @@ var app = new Vue(
         /* METHODS */
         methods: {
 
+            // Contatto attivo
+            activeContact ( index ) {
+                this.activeContactIndex = index;
+            },
+
             // Funzione che mi permette di filtrare i contatti
             filterContact () {
                 //Stringa inserita toLowerCase

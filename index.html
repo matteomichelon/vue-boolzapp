@@ -91,7 +91,7 @@
                                 v-if="contacts.length > 0"
                                 v-for="(contact, index) in contacts"
                                 v-bind:class="{active : index == activeContactIndex}"
-                                v-on:click="{activeContactIndex = index}">
+                                v-on:click="activeContact(index)">
 
                                 <ul v-if="contact.visible == true">
                                     <li class="display-flex">
