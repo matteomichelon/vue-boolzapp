@@ -4,6 +4,7 @@
     @media screen and (min-width: 992px) {}
 */
 
+
 /* RESET */
 
 * {
@@ -11,6 +12,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 
 /* COMMON */
 
@@ -37,7 +39,11 @@ li {
     /* Blocchiamo il nostro wrapper ad una certa larghezza */
     min-width: 900px;
     padding: 20px 0;
-    background-image: linear-gradient(to bottom, #009688 0px, #009688 15vh, #dddbd1 15vh, #d2dbdc 100%);
+    background-image: linear-gradient(to bottom,
+            #009688 0px,
+            #009688 15vh,
+            #dddbd1 15vh,
+            #d2dbdc 100%);
 }
 
 .container {
@@ -55,6 +61,7 @@ li {
     display: table;
     clear: both;
 }
+
 
 /* Header Contact */
 
@@ -88,7 +95,6 @@ li {
     align-items: center;
 }
 
-
 span.last-login,
 span.last-date-chat,
 span.last-text-chat {
@@ -106,6 +112,7 @@ main {
     width: 100%;
 }
 
+
 /* Container-left */
 
 .container-left {
@@ -114,6 +121,7 @@ main {
     overflow: hidden;
     flex-direction: column;
 }
+
 
 /* Notifications */
 
@@ -150,6 +158,7 @@ main {
     color: #6090A5;
 }
 
+
 /* Finder */
 
 .finder-container {
@@ -165,7 +174,6 @@ main {
     line-height: 30px;
     border: 1px solid lightgray;
     border-right: 0;
-
 }
 
 .finder-container a {
@@ -178,14 +186,12 @@ main {
     border: 1px solid lightgray;
     border-left: 0;
     padding: 5px;
-
 }
 
 .finder-container input::placeholder {
     color: #B6B9BC;
-
-
 }
+
 
 /* Contacts */
 
@@ -213,7 +219,6 @@ main {
 .contact li span {
     vertical-align: top;
     padding-left: 20px;
-
 }
 
 .contact-name {
@@ -228,7 +233,6 @@ main {
     left: 0;
 }
 
-
 .active {
     background-color: lightgray;
 }
@@ -242,7 +246,6 @@ main {
 }
 
 
-
 /* Container-right */
 
 .container-right {
@@ -251,6 +254,7 @@ main {
     flex-direction: column;
     overflow: hidden;
 }
+
 
 /* Messages */
 
@@ -288,7 +292,6 @@ main {
     position: relative;
 }
 
-
 .messages .message-date {
     position: absolute;
     top: 35px;
@@ -296,6 +299,7 @@ main {
     font-size: 10px;
     color: #aeb1b4;
 }
+
 
 /* Chevron - Info Message */
 
@@ -338,6 +342,7 @@ div.message-option .delete-message:hover {
 .message-sent:hover .chevron-icon {
     display: block;
 }
+
 
 /* Message actions */
 
