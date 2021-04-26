@@ -119,6 +119,7 @@ var app = new Vue(
             // Contatto attivo
             activeContact ( index ) {
                 this.activeContactIndex = index;
+                this.activeMessage = false;
             },
 
             // Funzione che mi permette di filtrare i contatti
@@ -198,7 +199,7 @@ var app = new Vue(
                 // Rimuovo l'elemento indice dall'array
                 arrayMessages.splice( messageIndex, 1 );
 
-                // Active message false! quando viene aggiunta funzione
+                this.activeMessage = false;
 
             },
 

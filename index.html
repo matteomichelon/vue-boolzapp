@@ -99,9 +99,14 @@
                                             v-bind:src="'img/avatar'+ contact.avatar +'.jpg'"
                                             v-bind:alt="'Foto di ' + contact.name">
                                         <span class="contact-name">{{contact.name}}
-                                            <span class="last-text-chat">{{lastMessage(contact)}}</span>
+                                            <span v-if="contacts[index].messages.length > 0"
+                                                class="last-text-chat">{{lastMessage(contact)}}</span>
+                                            <span v-else=""
+                                                class="last-text-chat">messages are end to end encrypted</span>
                                         </span>
-                                        <span class="last-date-chat">{{lastAccess(contacts[index])}}</span>
+                                        <span v-if="contacts[index].messages.length > 0"
+                                            class="last-date-chat">{{lastAccess(contacts[index])}}</span>
+
                                     </li>
                                 </ul>
                             </div>
@@ -124,8 +129,11 @@
                                     v-bind:alt="'Foto di ' + contacts[activeContactIndex].name">
                                 <div>
                                     {{contacts[activeContactIndex].name}}
-                                    <span class="last-login">Ultimo accesso il
+                                    <span v-if="contacts[activeContactIndex].messages.length > 0"
+                                        class="last-login">Ultimo accesso il
                                         {{lastAccess(contacts[activeContactIndex])}}</span>
+                                    <span v-else=""
+                                        class="last-login">Status: Online</span>
                                 </div>
                             </div>
                             <div class="header-user-icons">
