@@ -177,7 +177,7 @@ var app = new Vue(
                     }
 
                     // Aggiungo l'oggetto creato all'array di messaggi 
-                    contactActiveNow.push( newMessageObject );
+                    arraytMessage.push( newMessageObject );
 
                     // La risposta sarà dopo 1 secondo
                 }, 1000 );
