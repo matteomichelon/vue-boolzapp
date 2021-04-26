@@ -13,6 +13,8 @@ var app = new Vue(
 
             userFilterText: '',
 
+            activeMessage: false,
+
             contacts: [
                 {
                     name: 'Michele',
@@ -22,20 +24,20 @@ var app = new Vue(
                         {
                             date: '10/01/2020 15:30:55',
                             text: 'Hai portato a spasso il cane?',
-                            status: 'sent',
-                            chevron: false
+                            status: 'sent'
+
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             text: 'Ricordati di dargli da mangiare',
-                            status: 'sent',
-                            chevron: false
+                            status: 'sent'
+
                         },
                         {
                             date: '10/01/2020 16:15:22',
                             text: 'Tutto fatto!',
                             status: 'received',
-                            chevron: false
+
                         }
                     ],
                 },
@@ -47,20 +49,20 @@ var app = new Vue(
                         {
                             date: '20/03/2020 16:30:00',
                             text: 'Ciao come stai?',
-                            status: 'sent',
-                            chevron: false
+                            status: 'sent'
+
                         },
                         {
                             date: '20/03/2020 16:30:55',
                             text: 'Bene grazie! Stasera ci vediamo?',
                             status: 'received',
-                            chevron: false
+
                         },
                         {
                             date: '20/03/2020 16:35:00',
                             text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                            status: 'sent',
-                            chevron: false
+                            status: 'sent'
+
                         }
                     ],
                 },
@@ -73,19 +75,19 @@ var app = new Vue(
                             date: '28/03/2020 10:10:40',
                             text: 'La Marianna va in campagna',
                             status: 'received',
-                            chevron: false
+
                         },
                         {
                             date: '28/03/2020 10:20:10',
                             text: 'Sicuro di non aver sbagliato chat?',
-                            status: 'sent',
-                            chevron: false
+                            status: 'sent'
+
                         },
                         {
                             date: '28/03/2020 16:15:22',
                             text: 'Ah scusa!',
                             status: 'received',
-                            chevron: false
+
                         }
                     ],
                 },
@@ -97,14 +99,14 @@ var app = new Vue(
                         {
                             date: '10/01/2020 15:30:55',
                             text: 'Lo sai che ha aperto una nuova pizzeria?',
-                            status: 'sent',
-                            chevron: false
+                            status: 'sent'
+
                         },
                         {
                             date: '10/01/2020 15:50:00',
                             text: 'Si, ma preferirei andare al cinema',
                             status: 'received',
-                            chevron: false
+
                         }
                     ],
                 },
@@ -152,8 +154,8 @@ var app = new Vue(
                 const newMessageObject = {
                     date: currentDate,
                     text: newMessage,
-                    status: 'sent',
-                    chevron: false
+                    status: 'sent'
+
                 }
 
                 // Aggiungo l'oggetto creato all'array di messaggi 
@@ -173,7 +175,7 @@ var app = new Vue(
                         date: currentDate,
                         text: 'ok',
                         status: 'received',
-                        chevron: false
+
                     }
 
                     // Aggiungo l'oggetto creato all'array di messaggi 
@@ -187,7 +189,7 @@ var app = new Vue(
                 // Prelevo l'array di messaggi dell'utente
                 const arrayObjectContact = this.contacts[ this.activeContactIndex ];
                 const arrayMessages = arrayObjectContact.messages;
-               
+
                 // Rimuovo l'elemento indice dall'array
                 arrayMessages.splice( messageIndex, 1 );
 
@@ -204,29 +206,17 @@ var app = new Vue(
                 return lastMessage;
             },
 
-            optionView ( message ) {
-                const arrayContacts = this.contacts;
+            optionView ( index ) {
 
+                if ( this.activeMessage === index ) {
 
+                    this.activeMessage = false
 
-                // Resetto tutte le chevron
-                arrayContacts.forEach( element => {
-                    const arrayMessages = element.messages;
-                    arrayMessages.forEach( element => {
-                        element.chevron = false;
-                        console.log( element.chevron );
-                    } );
-                } );
+                } else {
+                    
+                    this.activeMessage = index;
+                }
 
-                // Rendo true la chevron corrente
-                message.chevron = !message.chevron;
-
-
-
-
-                //console.log( this.contacts );
-                //console.log( message.chevron );
-                //console.log( index );
             }
 
         }

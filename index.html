@@ -151,7 +151,7 @@
 
                                         <!-- Chevron icon -->
                                         <div class="chevron-icon"
-                                            v-on:click="optionView(message, index)">
+                                            v-on:click="optionView(index)">
                                             <a href="#">
                                                 <i class="fas fa-chevron-down"></i>
                                             </a>
@@ -159,8 +159,8 @@
                                         <!-- end Chevron icon -->
 
                                         <!-- Info Message -->
-                                        <div class="message-option display-none"
-                                            v-bind:class="{ 'display-block': message.chevron }">
+                                        <div class="message-option"
+                                            v-if="activeMessage === index">
                                             <ul>
 
                                                 <li class="info-message">
@@ -188,7 +188,7 @@
 
                                         <!-- Chevron icon -->
                                         <span class="chevron-icon"
-                                            v-on:click="optionView(message, index)">
+                                            v-on:click="optionView(index)">
                                             <a href="#">
                                                 <i class="fas fa-chevron-down"></i>
                                             </a>
@@ -196,8 +196,8 @@
                                         <!-- end Chevron icon -->
 
                                         <!-- Info Message -->
-                                        <div class="message-option display-none"
-                                            v-bind:class="{ 'display-block': message.chevron }">
+                                        <div class="message-option"
+                                            v-if="activeMessage === index">
                                             <ul>
 
                                                 <li class="info-message">
@@ -205,7 +205,7 @@
                                                 </li>
 
                                                 <li class="delete-message"
-                                                    v-on:click="deleteMessage(message)">
+                                                    v-on:click="deleteMessage(index)">
                                                     Cancella messaggio
                                                 </li>
 
